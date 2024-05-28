@@ -1,0 +1,1 @@
+A program that (should) detect if a hand is in frame of the webcam. I trained it on Google Colab with yolov5 using a dataset I found on Roboflow. However, the accuracy is horrendous and I haven't had the time to fix the problem.
