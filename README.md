@@ -1,32 +1,40 @@
 # Hand Detection  
 
-A simple hand detection program using OpenCV and MediaPipe. This project tracks hand movements in real-time through a webcam and identifies key hand landmarks.  
+A real-time hand detection program using **Python, OpenCV, and YOLOv5**. The model was trained on Google Colab and detects hands in a webcam feed with high accuracy.  
 
 ## Features  
-- Real-time hand tracking using MediaPipe Hands  
-- Draws hand landmarks and connections on video feed  
-- Detects multiple hands simultaneously  
-- Efficient and lightweight, running on CPU  
+- Real-time hand detection using **YOLOv5**  
+- Custom-trained model for improved accuracy  
+- Processes live video feed using OpenCV  
+- Efficient and optimized for real-time performance  
 
 ## Requirements  
 Ensure you have the following dependencies installed:  
 ```bash
-pip install opencv-python mediapipe
+pip install torch torchvision opencv-python numpy
+```
+
+You also need to clone the **YOLOv5** repository if you haven't already:  
+```bash
+git clone https://github.com/ultralytics/yolov5
+cd yolov5
+pip install -r requirements.txt
 ```
 
 ## Usage  
-Run the script to start hand detection:  
+Run the script to start real-time hand detection:  
 ```bash
 python hand_detection.py
 ```
-Make sure your webcam is connected and accessible. The program will display the video feed with detected hand landmarks.  
+Make sure your trained YOLOv5 model is placed correctly in the project directory.  
 
 ## How It Works  
-- Uses **MediaPipe Hands** for landmark detection  
-- Captures video from webcam using **OpenCV**  
-- Draws detected hand landmarks with unique identifiers  
-- Updates in real-time for smooth tracking  
+- Captures video from the webcam using **OpenCV**  
+- Loads a custom **YOLOv5** model trained on hand images  
+- Detects hands in real time and draws bounding boxes  
+- Runs efficiently on CPU/GPU for smooth performance  
 
 ## Notes  
-- Works best in well-lit environments  
-- Performance may vary based on CPU speed and camera quality  
+- Model was trained using **Google Colab** with a custom dataset  
+- GPU acceleration is recommended for optimal performance  
+- Adjust confidence thresholds as needed for different environments  
